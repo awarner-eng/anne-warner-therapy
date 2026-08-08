@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import ServiceClosingCTA from '../../components/ServiceClosingCTA.astro';
+import { services, serviceHref } from '../../data/services';
+---
+
+<BaseLayout
+  title="Therapy Services in Newport Beach, CA | Individual, Couples, Teen & Christian Therapy"
+  description="Explore therapy services in Newport Beach: individual, couples, pre-marital, teen, and Christian therapy. Affordable rates, in person and telehealth."
+>
+  <!-- Intro -->
+  <section class="page-intro">
+    <div class="wrap">
+      <p class="eyebrow">Services</p>
+      <h1 class="display display-lg">Therapy Services in Newport Beach &amp; Orange County</h1>
+      <p class="lede">Every person and every relationship carries its own history, its own patterns, its own places that ache. Below are the ways I work with individuals, couples, and teens, always at your pace, always working toward real change rather than a quick fix.</p>
+    </div>
+  </section>
+
+  <!-- Services grid -->
+  <section class="services">
+    <div class="wrap">
+      <ul class="service-grid">
+        {services.map((service, i) => (
+          <ServiceCard
+            index={String(i + 1).padStart(2, '0')}
+            title={service.title}
+            description={service.description}
+            variant={service.variant}
+            href={serviceHref(service.slug)}
+          />
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <ServiceClosingCTA />
+</BaseLayout>
