@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+
+const services = [
+  {
+    index: '01',
+    title: 'Couples Therapy',
+    description: 'Truly seeing and hearing each other again — sometimes for the first time in a long time.',
+    variant: 'plum' as const,
+  },
+  {
+    index: '02',
+    title: 'Individual Therapy',
+    description: 'For anxiety, identity, trauma, or loss — a space to slow down and understand your patterns.',
+    variant: 'clay' as const,
+  },
+  {
+    index: '03',
+    title: 'Teen Therapy',
+    description: 'A supportive, non-judgmental space for the hard parts of growing up.',
+    variant: 'olive' as const,
+  },
+  {
+    index: '04',
+    title: 'Pre-Marital Therapy',
+    description: 'Exploring values, communication, and expectations — a shared vision for your future.',
+    variant: 'lavender' as const,
+  },
+  {
+    index: '05',
+    title: 'Christian & Spiritual Integration',
+    description: 'When faith shapes how you show up in the world, it’s worth bringing into the room.',
+    variant: 'ink' as const,
+  },
+];
+---
+
+<BaseLayout
+  title="Anne Warner Therapy | Psychotherapy in Newport Beach & Fullerton, CA"
+  description="Affordable psychotherapy for couples, teens, and individuals in Newport Beach and Fullerton, CA. Schedule a free 15-minute consultation with Anne Warner."
+>
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Psychotherapy &middot; Newport Beach &amp; Fullerton, CA</p>
+        <h1 class="display">Rediscover<br>each other.</h1>
+        <p class="lede">Affordable psychotherapy for couples, teens, and individuals &mdash; a space to slow down, understand your patterns, and step into real healing.</p>
+        <div class="hero-cta">
+          <a class="btn btn-dark" href="#contact">Schedule a Consultation</a>
+          <p class="hero-cta-note">Free 15-minute call &mdash; no pressure, just a conversation.</p>
+        </div>
+      </div>
+      <div class="hero-art" role="img" aria-label="Illustration placeholder, reserved for commissioned artwork">
+        <span class="hero-art-label">Illustration placeholder</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy -->
+  <section class="philosophy">
+    <div class="wrap">
+      <p class="philosophy-quote">&ldquo;Healing begins when another bears witness to our deepest fears, hopes, and longings.&rdquo;</p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Services</p>
+        <h2 class="display display-md">Ways we can work together</h2>
+      </div>
+
+      <ul class="service-grid">
+        {services.map((service) => <ServiceCard {...service} />)}
+      </ul>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="wrap about-inner">
+      <div class="about-portrait" role="img" aria-label="Portrait placeholder for Anne Warner">
+        <span class="about-portrait-label">Portrait &mdash; Anne Warner</span>
+      </div>
+      <div class="about-copy">
+        <p class="eyebrow eyebrow-olive">About Anne</p>
+        <h2 class="display display-md about-heading">Depth-oriented therapy, with warmth and honesty.</h2>
+        <p>I step into the trenches with those navigating relationship distress, trauma, identity questions, anxiety, and loss &mdash; because healing begins when someone truly bears witness to what we carry.</p>
+        <p>With a psychodynamic lens, I help untangle the unconscious patterns that keep us stuck in cycles of disconnection. Understanding, safety, and support can lead to profound transformation &mdash; and I believe it&rsquo;s work worth doing.</p>
+        <ul class="tag-list">
+          <li>Anxiety</li>
+          <li>Spirituality &amp; Identity</li>
+          <li>EFT for Couples</li>
+        </ul>
+        <p class="credential">Associate Marriage &amp; Family Therapist, AMFT #150232 &middot; Supervised by Dr. Michele Willingham, PSY 15849</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statement -->
+  <section class="statement">
+    <div class="wrap">
+      <h2 class="display display-lg">Therapy is never selfish.</h2>
+      <p>It&rsquo;s a chance to take care of your most precious resource. Reach out &mdash; let&rsquo;s see if it&rsquo;s a good fit.</p>
+      <a class="btn btn-cream" href="#contact">Schedule a Consultation</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,40 @@
+---
+---
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">Anne Warner</a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="sr-only">Menu</span>
+    </button>
+
+    <nav class="primary-nav" id="primaryNav">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <span class="nav-soon" title="Coming soon">Blog</span>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-outline nav-cta" href="#contact">Schedule a Consultation</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('primaryNav');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = nav?.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(!!isOpen));
+  });
+
+  nav?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('is-open');
+      toggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>

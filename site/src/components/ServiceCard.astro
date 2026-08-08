@@ -1,0 +1,18 @@
+---
+interface Props {
+  index: string;
+  title: string;
+  description: string;
+  variant: 'plum' | 'clay' | 'olive' | 'lavender' | 'ink';
+}
+
+const { index, title, description, variant } = Astro.props;
+const buttonVariant = variant === 'lavender' ? 'btn-outline-dark' : 'btn-outline-light';
+---
+
+<li class={`service-card service-card--${variant}`}>
+  <span class="service-index">{index}</span>
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <a class={`btn ${buttonVariant}`} href="#contact" aria-label={`Learn more about ${title}`}>Learn More</a>
+</li>
