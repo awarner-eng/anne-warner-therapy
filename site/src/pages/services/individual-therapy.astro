@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import AtAGlance from '../../components/AtAGlance.astro';
+import ProcessBand from '../../components/ProcessBand.astro';
+import TherapistNote from '../../components/TherapistNote.astro';
+import RelatedServices from '../../components/RelatedServices.astro';
+import ServiceClosingCTA from '../../components/ServiceClosingCTA.astro';
+
+const workFor = [
+  { color: 'clay', text: 'Anxiety' },
+  { color: 'olive', text: 'Identity issues and self-esteem' },
+  { color: 'plum', text: 'Spirituality' },
+  { color: 'lavender', text: 'Trauma and personal depth work' },
+];
+---
+
+<BaseLayout
+  title="Individual Therapy in Newport Beach, CA | Anne Warner"
+  description="Insight oriented individual therapy in Newport Beach. ISTDP and attachment-informed care for anxiety, identity, shame, and trauma."
+>
+  <Breadcrumb currentLabel="Individual Therapy" />
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-inner hero-inner--service">
+      <div class="hero-copy">
+        <p class="eyebrow" style="color:var(--clay)">Individual Therapy</p>
+        <h1 class="display">Individual therapy<br>in Newport Beach</h1>
+        <p class="lede">Step toward greater self-awareness and emotional freedom by facing what&rsquo;s been buried.</p>
+        <div class="hero-cta">
+          <a class="btn btn-dark" href="#contact">Schedule a Consultation</a>
+          <p class="hero-cta-note">Free 15-minute call. No pressure, just a conversation.</p>
+        </div>
+      </div>
+      <div class="hero-art" style="background:var(--clay)" role="img" aria-label="Illustration placeholder, reserved for commissioned artwork">
+        <span class="hero-art-label">Illustration placeholder</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article + sidebar -->
+  <div class="wrap">
+    <div class="service-body">
+      <article class="service-article">
+        <p class="service-pullquote">I practice insight oriented individual therapy, drawing from ISTDP (Intensive Short-Term Dynamic Psychotherapy), which I&rsquo;m currently in my second year of formal training in, and informed by attachment theory.</p>
+        <p>That means we won&rsquo;t just talk about what&rsquo;s happening on the surface. We&rsquo;ll pay close attention to your inner world, adjust to your pace, and work together to uncover the patterns underneath anxiety, identity struggles, shame, depression, and loss. Many clients are surprised by what surfaces even in the first session.</p>
+        <p>I work with adults navigating anxiety, identity issues, self-esteem, spirituality, trauma, and personal depth work. If you&rsquo;ve been carrying something for a long time and are ready to actually look at it, I&rsquo;d love to hear from you.</p>
+
+        <div class="work-for">
+          <p class="eyebrow eyebrow-olive">This Work Is For</p>
+          <ul class="work-for-list">
+            {workFor.map((item) => (
+              <li>
+                <span class="work-for-dot" style={`background:var(--${item.color})`}></span>
+                <span>{item.text}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </article>
+
+      <AtAGlance
+        approach="ISTDP (Intensive Short-Term Dynamic Psychotherapy), attachment informed"
+        format="In person in Newport Beach and Fullerton, telehealth throughout California"
+        fees="Sliding scale available. Evening and weekend times."
+        ctaVariant="clay"
+      />
+    </div>
+  </div>
+
+  <ProcessBand variant="ink" />
+  <TherapistNote />
+  <RelatedServices excludeSlug="individual-therapy" />
+  <ServiceClosingCTA />
+</BaseLayout>
