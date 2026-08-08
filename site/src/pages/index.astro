@@ -5,51 +5,62 @@ import ServiceCard from '../components/ServiceCard.astro';
 const services = [
   {
     index: '01',
-    title: 'Couples Therapy',
-    description: 'Truly seeing and hearing each other again — sometimes for the first time in a long time.',
-    variant: 'plum' as const,
+    title: 'Individual Therapy',
+    description: 'Step toward greater self-awareness and emotional freedom by facing what’s been buried.',
+    variant: 'clay' as const,
+    href: '/services/individual-therapy/',
   },
   {
     index: '02',
-    title: 'Individual Therapy',
-    description: 'For anxiety, identity, trauma, or loss — a space to slow down and understand your patterns.',
-    variant: 'clay' as const,
+    title: 'Couples Therapy',
+    description: 'Rediscover each other with clarity, care, and a new way to communicate.',
+    variant: 'plum' as const,
+    href: '/services/couples-therapy/',
   },
   {
     index: '03',
-    title: 'Teen Therapy',
-    description: 'A supportive, non-judgmental space for the hard parts of growing up.',
-    variant: 'olive' as const,
+    title: 'Pre-Marital Therapy',
+    description: 'Strengthen your bond, navigate challenges, and create a shared vision for a lasting partnership.',
+    variant: 'lavender' as const,
+    href: '/services/pre-marital-therapy/',
   },
   {
     index: '04',
-    title: 'Pre-Marital Therapy',
-    description: 'Exploring values, communication, and expectations — a shared vision for your future.',
-    variant: 'lavender' as const,
+    title: 'Teen Therapy',
+    description: 'A safe place to understand yourself, express your feelings, and build the confidence to thrive.',
+    variant: 'olive' as const,
+    href: '/services/teen-therapy/',
   },
   {
     index: '05',
-    title: 'Christian & Spiritual Integration',
-    description: 'When faith shapes how you show up in the world, it’s worth bringing into the room.',
+    title: 'Christian Therapy',
+    description: 'Integrating spiritual life and emotional health. When faith shapes how you show up in the world, it’s worth bringing into the room.',
     variant: 'ink' as const,
+    href: '/services/christian-therapy/',
   },
+];
+
+const affordablePoints = [
+  'Sliding scale fees available',
+  'In-person sessions in Newport Beach, telehealth throughout California',
+  'Evening and weekend availability',
+  'Trained in Emotionally Focused Therapy (EFT), currently in my second year of formal training in ISTDP (Intensive Short-Term Dynamic Psychotherapy), and informed by attachment work',
 ];
 ---
 
 <BaseLayout
-  title="Anne Warner Therapy | Psychotherapy in Newport Beach & Fullerton, CA"
-  description="Affordable psychotherapy for couples, teens, and individuals in Newport Beach and Fullerton, CA. Schedule a free 15-minute consultation with Anne Warner."
+  title="Anne Warner Therapy | Psychotherapist in Newport Beach, CA"
+  description="Affordable, insight oriented psychotherapy for individuals, couples, and teens in Newport Beach and Orange County. Christian therapy available. Schedule a free consultation."
 >
   <!-- Hero -->
   <section class="hero" id="top">
     <div class="wrap hero-inner">
       <div class="hero-copy">
-        <p class="eyebrow">Psychotherapy &middot; Newport Beach &amp; Fullerton, CA</p>
-        <h1 class="display">Rediscover<br>each other.</h1>
-        <p class="lede">Affordable psychotherapy for couples, teens, and individuals &mdash; a space to slow down, understand your patterns, and step into real healing.</p>
+        <p class="eyebrow">Psychotherapy &middot; Newport Beach, CA</p>
+        <h1 class="display">It&rsquo;s never too<br>late to heal.</h1>
+        <p class="lede">Affordable, insight oriented psychotherapy for individuals, couples, and teens in Newport Beach, CA.</p>
         <div class="hero-cta">
-          <a class="btn btn-dark" href="#contact">Schedule a Consultation</a>
-          <p class="hero-cta-note">Free 15-minute call &mdash; no pressure, just a conversation.</p>
+          <a class="btn btn-dark" href="#contact">Schedule a Free Consultation</a>
         </div>
       </div>
       <div class="hero-art" role="img" aria-label="Illustration placeholder, reserved for commissioned artwork">
@@ -58,10 +69,19 @@ const services = [
     </div>
   </section>
 
-  <!-- Philosophy -->
-  <section class="philosophy">
-    <div class="wrap">
-      <p class="philosophy-quote">&ldquo;Healing begins when another bears witness to our deepest fears, hopes, and longings.&rdquo;</p>
+  <!-- Intro -->
+  <section class="about" id="about">
+    <div class="wrap about-inner">
+      <div class="about-portrait" role="img" aria-label="Portrait placeholder for Anne Warner">
+        <span class="about-portrait-label">Portrait &mdash; Anne Warner</span>
+      </div>
+      <div class="about-copy">
+        <p class="eyebrow eyebrow-olive">About Anne</p>
+        <h2 class="display display-md about-heading">Psychotherapy in Newport Beach, CA</h2>
+        <p>I&rsquo;m Anne Warner, an Associate Marriage &amp; Family Therapist (AMFT #150232, supervised by Susan Beisner, LMFT #46150, and Dr. Michele Willingham, PSY #15849) working with individuals, couples, and teens across Newport Beach and Orange County, in person and by telehealth throughout California.</p>
+        <p>I seek to step into the trenches with you. I believe healing begins when another person bears witness to our deepest fears, hopes, and longings, and that most of us are carrying unconscious patterns that quietly shape our relationships and keep us stuck in cycles of disconnection. My work is to help you untangle those patterns, at a pace that feels safe, in a style that gets right to the point. You might be surprised by what you find, even in the first session.</p>
+        <p>Therapy is never selfish. It&rsquo;s a chance to take care of your most precious resource, yourself.</p>
+      </div>
     </div>
   </section>
 
@@ -69,7 +89,7 @@ const services = [
   <section class="services" id="services">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">Services</p>
+        <p class="eyebrow">Areas of Focus</p>
         <h2 class="display display-md">Ways we can work together</h2>
       </div>
 
@@ -79,33 +99,25 @@ const services = [
     </div>
   </section>
 
-  <!-- About -->
-  <section class="about" id="about">
-    <div class="wrap about-inner">
-      <div class="about-portrait" role="img" aria-label="Portrait placeholder for Anne Warner">
-        <span class="about-portrait-label">Portrait &mdash; Anne Warner</span>
+  <!-- Affordable Therapy -->
+  <section class="affordable">
+    <div class="wrap affordable-inner">
+      <div class="affordable-copy">
+        <h2 class="display display-md">Affordable Therapy in Orange County</h2>
+        <p>I offer sliding scale fees because I believe everyone deserves access to real care, not just people who happen to have the money for it. As an Associate Marriage and Family Therapist, I&rsquo;m able to offer rates that are often lower than a fully licensed practice, without cutting corners on the work itself.</p>
       </div>
-      <div class="about-copy">
-        <p class="eyebrow eyebrow-olive">About Anne</p>
-        <h2 class="display display-md about-heading">Depth-oriented therapy, with warmth and honesty.</h2>
-        <p>I step into the trenches with those navigating relationship distress, trauma, identity questions, anxiety, and loss &mdash; because healing begins when someone truly bears witness to what we carry.</p>
-        <p>With a psychodynamic lens, I help untangle the unconscious patterns that keep us stuck in cycles of disconnection. Understanding, safety, and support can lead to profound transformation &mdash; and I believe it&rsquo;s work worth doing.</p>
-        <ul class="tag-list">
-          <li>Anxiety</li>
-          <li>Spirituality &amp; Identity</li>
-          <li>EFT for Couples</li>
-        </ul>
-        <p class="credential">Associate Marriage &amp; Family Therapist, AMFT #150232 &middot; Supervised by Dr. Michele Willingham, PSY 15849</p>
-      </div>
+      <ul class="affordable-list">
+        {affordablePoints.map((point) => <li>{point}</li>)}
+      </ul>
     </div>
   </section>
 
-  <!-- Statement -->
+  <!-- Closing CTA -->
   <section class="statement">
     <div class="wrap">
-      <h2 class="display display-lg">Therapy is never selfish.</h2>
-      <p>It&rsquo;s a chance to take care of your most precious resource. Reach out &mdash; let&rsquo;s see if it&rsquo;s a good fit.</p>
-      <a class="btn btn-cream" href="#contact">Schedule a Consultation</a>
+      <h2 class="display display-lg">Ready to Connect?</h2>
+      <p>Whether you&rsquo;re looking for yourself, you and your partner, or your teen, reach out. Let&rsquo;s see if it&rsquo;s a good fit. Schedule a free 15-minute consultation and we&rsquo;ll take it from there.</p>
+      <a class="btn btn-cream" href="#contact">Get in Touch</a>
     </div>
   </section>
 </BaseLayout>

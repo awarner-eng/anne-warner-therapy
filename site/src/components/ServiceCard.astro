@@ -4,9 +4,10 @@ interface Props {
   title: string;
   description: string;
   variant: 'plum' | 'clay' | 'olive' | 'lavender' | 'ink';
+  href: string;
 }
 
-const { index, title, description, variant } = Astro.props;
+const { index, title, description, variant, href } = Astro.props;
 const buttonVariant = variant === 'lavender' ? 'btn-outline-dark' : 'btn-outline-light';
 ---
 
@@ -14,5 +15,5 @@ const buttonVariant = variant === 'lavender' ? 'btn-outline-dark' : 'btn-outline
   <span class="service-index">{index}</span>
   <h3>{title}</h3>
   <p>{description}</p>
-  <a class={`btn ${buttonVariant}`} href="#contact" aria-label={`Learn more about ${title}`}>Learn More</a>
+  <a class={`btn ${buttonVariant}`} href={href} aria-label={`Read more about ${title}`}>Read More &rarr;</a>
 </li>

@@ -256,14 +256,6 @@ ul { list-style: none; margin: 0; padding: 0; }
   gap: 22px;
 }
 
-.hero-cta-note {
-  font-size: 13.5px;
-  color: var(--text-gold);
-  max-width: 190px;
-  line-height: 1.5;
-  margin: 0;
-}
-
 .hero-art {
   position: relative;
   border-radius: 18px;
@@ -286,26 +278,58 @@ ul { list-style: none; margin: 0; padding: 0; }
   color: rgba(250, 247, 240, 0.8);
 }
 
-/* ---------- philosophy ---------- */
+/* ---------- affordable ---------- */
 
-.philosophy {
-  padding: 72px 24px;
-  text-align: center;
+.affordable {
+  padding: 64px 24px;
   border-top: 1px solid var(--border-ink);
 }
 
-@media (min-width: 900px) {
-  .philosophy { padding: 110px 48px; }
+@media (min-width: 900px) { .affordable { padding: 110px 48px; } }
+
+.affordable-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
 }
 
-.philosophy-quote {
-  margin: 0 auto;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: clamp(22px, 3.5vw, 34px);
-  line-height: 1.45;
-  color: var(--ink-deep);
-  max-width: 760px;
+@media (min-width: 900px) {
+  .affordable-inner { grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+}
+
+.affordable-copy h2 { margin-bottom: 20px; }
+
+.affordable-copy p {
+  margin: 0;
+  font-size: 16.5px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  max-width: 480px;
+}
+
+.affordable-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.affordable-list li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--text-body);
+}
+
+.affordable-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--olive);
 }
 
 /* ---------- services ---------- */
