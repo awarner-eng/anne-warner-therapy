@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import AtAGlance from '../../components/AtAGlance.astro';
+import ProcessBand from '../../components/ProcessBand.astro';
+import TherapistNote from '../../components/TherapistNote.astro';
+import RelatedServices from '../../components/RelatedServices.astro';
+import ServiceClosingCTA from '../../components/ServiceClosingCTA.astro';
+
+const workFor = [
+  { color: 'plum', text: 'Communication that keeps breaking down' },
+  { color: 'olive', text: 'Disconnection that feels familiar and unbearable' },
+  { color: 'clay', text: 'The aftermath of betrayal' },
+  { color: 'lavender', text: 'Couples doing well who want to go deeper' },
+];
+---
+
+<BaseLayout
+  title="Couples Therapy in Newport Beach, CA | Anne Warner"
+  description="Emotionally Focused Therapy (EFT) for couples in Newport Beach and Orange County. Rebuild connection and communication."
+>
+  <Breadcrumb currentLabel="Couples Therapy" />
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-inner hero-inner--service">
+      <div class="hero-copy">
+        <p class="eyebrow" style="color:var(--plum)">Couples Therapy</p>
+        <h1 class="display">Couples therapy<br>in Newport Beach</h1>
+        <p class="lede">Rediscover each other with clarity, care, and a new way to communicate.</p>
+        <div class="hero-cta">
+          <a class="btn btn-dark" href="#contact">Schedule a Consultation</a>
+          <p class="hero-cta-note">Free 15-minute call. No pressure, just a conversation.</p>
+        </div>
+      </div>
+      <div class="hero-art" style="background:var(--plum)" role="img" aria-label="Illustration placeholder, reserved for commissioned artwork">
+        <span class="hero-art-label">Illustration placeholder</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article + sidebar -->
+  <div class="wrap">
+    <div class="service-body">
+      <article class="service-article">
+        <p class="service-pullquote">In couples therapy, I invite partners into a new dynamic where they can truly see and hear each other, sometimes for the first time in a long time.</p>
+        <p>When relationships hurt, it&rsquo;s often because both people are aching in ways they don&rsquo;t know how to express, caught in a cycle of disconnection that feels both familiar and unbearable.</p>
+        <p>Drawing from Emotionally Focused Therapy (EFT), I help couples slow down, name those raw places, and move toward each other with clarity and care.</p>
+
+        <div class="work-for">
+          <p class="eyebrow eyebrow-olive">This Work Is For</p>
+          <ul class="work-for-list">
+            {workFor.map((item) => (
+              <li>
+                <span class="work-for-dot" style={`background:var(--${item.color})`}></span>
+                <span>{item.text}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </article>
+
+      <AtAGlance
+        approach="Emotionally Focused Therapy (EFT), attachment informed"
+        format="In person in Newport Beach and Fullerton, telehealth throughout California"
+        fees="Sliding scale available. Evening and weekend times."
+        ctaVariant="plum"
+      />
+    </div>
+  </div>
+
+  <ProcessBand variant="ink" />
+  <TherapistNote />
+  <RelatedServices excludeSlug="couples-therapy" />
+  <ServiceClosingCTA />
+</BaseLayout>

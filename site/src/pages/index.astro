@@ -1,44 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ServiceCard from '../components/ServiceCard.astro';
-
-const services = [
-  {
-    index: '01',
-    title: 'Individual Therapy',
-    description: 'Step toward greater self-awareness and emotional freedom by facing what’s been buried.',
-    variant: 'clay' as const,
-    href: '/services/individual-therapy/',
-  },
-  {
-    index: '02',
-    title: 'Couples Therapy',
-    description: 'Rediscover each other with clarity, care, and a new way to communicate.',
-    variant: 'plum' as const,
-    href: '/services/couples-therapy/',
-  },
-  {
-    index: '03',
-    title: 'Pre-Marital Therapy',
-    description: 'Strengthen your bond, navigate challenges, and create a shared vision for a lasting partnership.',
-    variant: 'lavender' as const,
-    href: '/services/pre-marital-therapy/',
-  },
-  {
-    index: '04',
-    title: 'Teen Therapy',
-    description: 'A safe place to understand yourself, express your feelings, and build the confidence to thrive.',
-    variant: 'olive' as const,
-    href: '/services/teen-therapy/',
-  },
-  {
-    index: '05',
-    title: 'Christian Therapy',
-    description: 'Integrating spiritual life and emotional health. When faith shapes how you show up in the world, it’s worth bringing into the room.',
-    variant: 'ink' as const,
-    href: '/services/christian-therapy/',
-  },
-];
+import { services, serviceHref } from '../data/services';
 
 const affordablePoints = [
   'Sliding scale fees available',
@@ -94,7 +57,15 @@ const affordablePoints = [
       </div>
 
       <ul class="service-grid">
-        {services.map((service) => <ServiceCard {...service} />)}
+        {services.map((service, i) => (
+          <ServiceCard
+            index={String(i + 1).padStart(2, '0')}
+            title={service.title}
+            description={service.description}
+            variant={service.variant}
+            href={serviceHref(service.slug)}
+          />
+        ))}
       </ul>
     </div>
   </section>

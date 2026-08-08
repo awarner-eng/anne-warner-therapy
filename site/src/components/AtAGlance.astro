@@ -1,0 +1,34 @@
+---
+import type { ServiceVariant } from '../data/services';
+
+interface Props {
+  approach: string;
+  format: string;
+  fees: string;
+  ctaVariant: ServiceVariant;
+}
+
+const { approach, format, fees, ctaVariant } = Astro.props;
+---
+
+<aside class="at-a-glance">
+  <div class="at-a-glance-body">
+    <span class="at-a-glance-label">At a Glance</span>
+    <div class="at-a-glance-row">
+      <span>Approach</span>
+      <span>{approach}</span>
+    </div>
+    <div class="at-a-glance-row">
+      <span>Format</span>
+      <span>{format}</span>
+    </div>
+    <div class="at-a-glance-row">
+      <span>Fees</span>
+      <span>{fees}</span>
+    </div>
+  </div>
+  <div class="at-a-glance-cta" style={`background:var(--${ctaVariant})`}>
+    <span>Not sure where to start?</span>
+    <a class="btn btn-cream" href="#contact">Schedule a Consultation</a>
+  </div>
+</aside>

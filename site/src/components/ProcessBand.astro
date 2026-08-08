@@ -1,0 +1,44 @@
+---
+import type { ServiceVariant } from '../data/services';
+
+interface Props {
+  variant?: ServiceVariant | 'ink';
+}
+
+const { variant = 'ink' } = Astro.props;
+
+const steps = [
+  {
+    title: 'Reach out',
+    description: 'By phone, email, or the contact form. Tell me as much or as little as you like.',
+  },
+  {
+    title: 'A free 15-minute call',
+    description: 'Ask questions, get a feel for how I work, and decide together whether it’s a fit.',
+  },
+  {
+    title: 'Your first session',
+    description: 'In person in Newport Beach or Fullerton, or by telehealth anywhere in California.',
+  },
+];
+---
+
+<section class="process-band" style={`background:var(--${variant})`}>
+  <div class="wrap process-band-inner">
+    <div>
+      <p class="process-band-label">What Happens Next</p>
+      <h2 class="display process-band-heading">Starting is<br>simpler than<br>it sounds.</h2>
+    </div>
+    <div>
+      {steps.map((step, i) => (
+        <div class="process-step">
+          <span class="process-step-index">{String(i + 1).padStart(2, '0')}</span>
+          <div>
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

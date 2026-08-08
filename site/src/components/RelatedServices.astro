@@ -1,0 +1,31 @@
+---
+import { services, serviceHref } from '../data/services';
+import ServiceCard from './ServiceCard.astro';
+
+interface Props {
+  excludeSlug: string;
+}
+
+const { excludeSlug } = Astro.props;
+const related = services.filter((s) => s.slug !== excludeSlug);
+---
+
+<section class="related-services">
+  <div class="wrap">
+    <div class="related-services-head">
+      <h2 class="display">Other Ways We Can Work Together</h2>
+      <a href="/services/">All Services</a>
+    </div>
+    <ul class="service-grid">
+      {related.map((service, i) => (
+        <ServiceCard
+          index={String(i + 1).padStart(2, '0')}
+          title={service.title}
+          description={service.description}
+          variant={service.variant}
+          href={serviceHref(service.slug)}
+        />
+      ))}
+    </ul>
+  </div>
+</section>

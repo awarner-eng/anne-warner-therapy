@@ -1,15 +1,24 @@
 ---
+import { services, serviceHref } from '../data/services';
 ---
 
 <footer class="site-footer" id="contact">
   <div class="wrap footer-grid">
     <div class="footer-brand">
       <span class="brand-mark">Anne Warner</span>
-      <p>Psychotherapy for couples, teens, and individuals in Newport Beach &amp; Fullerton, CA.</p>
+      <p>Affordable, insight oriented psychotherapy for individuals, couples, and teens in Newport Beach, CA. Telehealth throughout California.</p>
       <p class="footer-contact-line">
         <a href="tel:+19494236071">(949) 423-6071</a><br>
         <a href="mailto:anne@annewarnertherapy.com">anne@annewarnertherapy.com</a>
       </p>
+    </div>
+    <div class="footer-services">
+      <p class="eyebrow">Services</p>
+      <ul class="footer-services-list">
+        {services.map((service) => (
+          <li><a href={serviceHref(service.slug)}>{service.title}</a></li>
+        ))}
+      </ul>
     </div>
     <div class="footer-office">
       <p class="eyebrow">Newport Beach</p>
